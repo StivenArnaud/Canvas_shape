@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas filling</title>
+</head>
+<body>
+    <h1>Canvas filling</h1>
+    
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="file">Chargez votre fichier (png, pdf, jpeg):</label>
+        <input type="file" name="file" accept=".png, .pdf, .jpeg">
+        
+        <p>Vous souhaitez ?</p>
+        <input type="radio" name="action" value="placer"> Placer
+        <input type="radio" name="action" value="border"> Border
+        <input type="radio" name="action" value="decouper"> Découper
+        
+        <p>Sélectionner votre format:</p>
+        <select name="format">
+            <option value="a1">A1</option>
+            <option value="a2">A2</option>
+            <option value="a3">A3</option>
+            <option value="a4">A4</option>
+            <option value="a5">A5</option>
+            <option value="a6">A6</option>
+            <option value="1m2">1m2</option>
+        </select>
+        
+        <input type="submit" value="UPLOAD">
+    </form>
+    <!-- Display errors if any -->
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
